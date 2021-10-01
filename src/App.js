@@ -9,6 +9,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 function App() {
   return (
     <div>
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/Inventory">
             <Inventory></Inventory>
+          </Route>
+          <Route path="/PlaceOrder">
+            <PlaceOrder></PlaceOrder>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
