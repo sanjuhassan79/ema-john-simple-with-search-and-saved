@@ -10,12 +10,18 @@ import {
   Route
 } from "react-router-dom";
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Shipping from './components/Shipping/Shipping';
 function App() {
   return (
     <div>
      
+<AuthProvider>
 
-      <Router>
+<Router>
       <div>
       <Header></Header>
 
@@ -31,11 +37,20 @@ function App() {
           <Route path="/OrderReview">
             <OrderReview></OrderReview>
           </Route>
-          <Route path="/Inventory">
+          <PrivateRoute path="/Inventory">
             <Inventory></Inventory>
-          </Route>
-          <Route path="/PlaceOrder">
+          </PrivateRoute>
+          <PrivateRoute path="/Shipping">
+            <Shipping></Shipping>
+          </PrivateRoute>
+          <PrivateRoute path="/PlaceOrder">
             <PlaceOrder></PlaceOrder>
+          </PrivateRoute>
+          <Route path="/Login">
+            <Login></Login>
+          </Route>
+          <Route path="/Register">
+            <Register></Register>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
@@ -44,6 +59,7 @@ function App() {
       </div>
     </Router>
 
+</AuthProvider>
 
 
      

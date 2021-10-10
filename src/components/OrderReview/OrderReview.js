@@ -21,9 +21,9 @@ removeFromDb(key)
 
 const handlePlaceOrder=()=>{
 
-    history.push('/PlaceOrder')
-    setCart([]);
-    clearTheCart()
+    history.push('/Shipping')
+  setCart([]);
+     clearTheCart()
 }
 
 
@@ -46,7 +46,7 @@ const handlePlaceOrder=()=>{
                     <Cart cart={cart}>
                         <button
                         onClick={handlePlaceOrder}
-                        className="btn-regular">Place Order</button>
+                        className="btn-regular">Proceed to Shipping</button>
                     </Cart>
                 </div>
             </div>
